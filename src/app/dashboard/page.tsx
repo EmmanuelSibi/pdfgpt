@@ -5,10 +5,10 @@ import { redirect } from "next/navigation";
 import React from "react";
 
 const page = async () => {
-  console.log("page dashboard");
+  
   const {getUser} = getKindeServerSession();
   const user =  await getUser();
-  console.log(user);
+ 
   if (!user) redirect("/auth-callback?origin=dashboard");
 
   const dbUser = await db.user.findFirst({
