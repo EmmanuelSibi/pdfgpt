@@ -9,7 +9,7 @@ const Page = () => {
   const searchParams = useSearchParams();
   const origin = searchParams.get("origin");
 
-  const { data } = trpc.authCallback.useQuery(undefined, {
+   trpc.authCallback.useQuery(undefined, {
     onSuccess: ({ success }) => {
       if (success) {
         //user is synced to db
